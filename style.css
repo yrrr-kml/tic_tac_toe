@@ -1,0 +1,299 @@
+@font-face {
+    font-family: "cdx";
+    font-display: swap;
+    src: url(../fonts/CDX_starstreak/CDXStarstreak/OTF/CDXStarstreak-Regular.otf);
+}
+
+@font-face {
+    font-family: "miau";
+    font-display: swap;
+    src: url(../fonts/miau_miou/MiauMiou.ttf);
+}
+
+:root {
+    --primary-text: cdx;
+    --secondary-text: miau;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background-image: url(../texture/beige-paper.png);
+
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* intro section  */
+#game-intro {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.game-title {
+    font-family: var(--primary-text);
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+.punch-line {
+    font-family: var(--primary-text);
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.intro-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: black;
+    border: 1.5px solid #9b89b3;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    margin-top: 10px;
+    font-family: var(--secondary-text);
+}
+
+.intro-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9b89b3;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.intro-btn:hover::before {
+    transform: translateX(0);
+}
+
+/* player's form section  */
+
+#game-form {
+    width: 50%;
+    height: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.form-title {
+    font-family: var(--primary-text);
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+#playersForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 10px;
+    height: 30px;
+    margin: 10px;
+    font-family: var(--secondary-text);
+    padding: 5px;
+}
+
+.form-btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: black;
+    border: 1.5px solid #9b89b3;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    margin-top: 10px;
+    font-family: var(--secondary-text);
+}
+
+.form-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9b89b3;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.form-btn:hover::before {
+    transform: translateX(0);
+}
+
+
+
+/* game board ka css */
+
+
+#game-container {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    display: none;
+}
+
+
+.player {
+    font-family: var(--primary-text);
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.turn-indicator {
+    margin-top: 10px;
+
+    font-family: var(--primary-text);
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+#game-board {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 300px;
+    height: 300px;
+}
+
+.box:nth-child(-n + 6) {
+    border-bottom: 2.5px solid black;
+}
+
+.box:not(:nth-child(3n)) {
+    border-right: 2.5px solid black;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.winner {
+    background-color: red;
+}
+
+.score-board{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.score-board div{
+    background-color: red;
+    width: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+        
+}
+
+.result-card {
+    padding: 30px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    border: black 2px solid;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+    align-items: center;
+    position: absolute;
+    font-family: var(--primary-text);
+}
+
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: black;
+    border: 1.5px solid #9b89b3;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    margin-top: 10px;
+    font-family: var(--secondary-text);
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9b89b3;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe game</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <section id="game-intro">
+            <h1 class="game-title">"tic tac toe"</h1>
+            <p class="punch-line">"best way to ruin years of friendship for 9 tiny squares"</p>
+            <div class="intro-btn">let's who's smarter!!</div>
+        </section>
+
+
+        <section id="game-form">
+            <h1 class="form-title">What are your name's brats!!</h1>
+            <form id="playersForm">
+                <input type="text" id="playerX" placeholder="Player X Name">
+                <input type="text" id="playerO" placeholder="Player O Name">
+                <button class="form-btn" type="button">let's cook</button>
+            </form>
+        </section>
+
+        <section id="game-container">
+            <h1 class="game-title">"tic tac toe"</h1>
+
+            <div class="player">player vs player</div>
+            <div class="turn-indicator">player turn</div>
+            
+            <!-- game board -->
+            <div id="game-board">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+            <!-- Score board -->
+            <div class="score-board">
+                <div>
+                    <span class="X-Score">0</span>
+                </div>
+
+                <div>
+                    <span class="O-Score">0</span>
+                </div>
+
+                <div>
+                    <span class="draws-Score">0</span>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <p class="result-msg"></p>
+                <p>wanna play another round?</p>
+                <button type="button" class="another-round btn">another round</button>
+                <button type="button" class="restart btn">restart</button>
+            </div>
+        </section>
+
+    </div>
+    <img src="../tic tac toe/img/0.jpg">
+
+    <script src="app.js"></script>
+</body>
+
+</html>
