@@ -179,5 +179,4 @@ restart.addEventListener("click", () => {
     Oscore.innerText = `${playerOwins}`;
     Draws.innerText = `${draws}`;
     result.style.display = "none";
-
 });
