@@ -131,14 +131,14 @@ for (let box of boxes) {
             if (ele.length === 0) {
                 if (turn) {
                     let img = document.createElement("img");
-                    img.src = "x.png";
+                    img.src = "../tic-tac-toe/img/x.png";
                     img.classList.add("img");
                     box.append(img);
                     turn = false;
                     turnIndicator.innerHTML = `${playerOname}'s turn - O`;
                 } else {
                     let img = document.createElement("img");
-                    img.src = "o.png";
+                    img.src = "../tic-tac-toe/img/o.png";
                     img.classList.add("img");
                     box.append(img);
                     turn = true;
